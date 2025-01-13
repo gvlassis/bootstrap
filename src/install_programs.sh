@@ -155,36 +155,46 @@ function install_programs(){
         (
             cd "${HOME}/.config/nvim/colors"
             rm -rf $HOME/.config/nvim/colors/*
+            
+            curl -LOJsS "https://raw.githubusercontent.com/gvlassis/gems/refs/heads/main/vim/amber.vim"
+            curl -LOJsS "https://raw.githubusercontent.com/gvlassis/gems/refs/heads/main/vim/light_amber.vim"
+            curl -LOJsS "https://raw.githubusercontent.com/gvlassis/gems/refs/heads/main/vim/dark_amber.vim"
 
-            curl -LOJsS "https://github.com/gvlassis/m3_extra_utils/releases/latest/download/dark_spinel.vim"
-            curl -LOJsS "https://github.com/gvlassis/m3_extra_utils/releases/latest/download/light_spinel.vim"
+            curl -LOJsS "https://raw.githubusercontent.com/gvlassis/gems/refs/heads/main/vim/amethyst.vim"
+            curl -LOJsS "https://raw.githubusercontent.com/gvlassis/gems/refs/heads/main/vim/light_amethyst.vim"
+            curl -LOJsS "https://raw.githubusercontent.com/gvlassis/gems/refs/heads/main/vim/dark_amethyst.vim"
 
-            curl -LOJsS "https://github.com/gvlassis/m3_extra_utils/releases/latest/download/dark_ruby.vim"
-            curl -LOJsS "https://github.com/gvlassis/m3_extra_utils/releases/latest/download/light_ruby.vim"
+            curl -LOJsS "https://raw.githubusercontent.com/gvlassis/gems/refs/heads/main/vim/citrine.vim"
+            curl -LOJsS "https://raw.githubusercontent.com/gvlassis/gems/refs/heads/main/vim/light_citrine.vim"
+            curl -LOJsS "https://raw.githubusercontent.com/gvlassis/gems/refs/heads/main/vim/dark_citrine.vim"
 
-            curl -LOJsS "https://github.com/gvlassis/m3_extra_utils/releases/latest/download/dark_amber.vim"
-            curl -LOJsS "https://github.com/gvlassis/m3_extra_utils/releases/latest/download/light_amber.vim"
+            curl -LOJsS "https://raw.githubusercontent.com/gvlassis/gems/refs/heads/main/vim/emerald.vim"
+            curl -LOJsS "https://raw.githubusercontent.com/gvlassis/gems/refs/heads/main/vim/light_emerald.vim"
+            curl -LOJsS "https://raw.githubusercontent.com/gvlassis/gems/refs/heads/main/vim/dark_emerald.vim"
 
-            curl -LOJsS "https://github.com/gvlassis/m3_extra_utils/releases/latest/download/dark_citrine.vim"
-            curl -LOJsS "https://github.com/gvlassis/m3_extra_utils/releases/latest/download/light_citrine.vim"
+            curl -LOJsS "https://raw.githubusercontent.com/gvlassis/gems/refs/heads/main/vim/jade.vim"
+            curl -LOJsS "https://raw.githubusercontent.com/gvlassis/gems/refs/heads/main/vim/light_jade.vim"
+            curl -LOJsS "https://raw.githubusercontent.com/gvlassis/gems/refs/heads/main/vim/dark_jade.vim"
 
-            curl -LOJsS "https://github.com/gvlassis/m3_extra_utils/releases/latest/download/dark_emerald.vim"
-            curl -LOJsS "https://github.com/gvlassis/m3_extra_utils/releases/latest/download/light_emerald.vim"
+            curl -LOJsS "https://raw.githubusercontent.com/gvlassis/gems/refs/heads/main/vim/quartz.vim"
+            curl -LOJsS "https://raw.githubusercontent.com/gvlassis/gems/refs/heads/main/vim/light_quartz.vim"
+            curl -LOJsS "https://raw.githubusercontent.com/gvlassis/gems/refs/heads/main/vim/dark_quartz.vim"
 
-            curl -LOJsS "https://github.com/gvlassis/m3_extra_utils/releases/latest/download/dark_jade.vim"
-            curl -LOJsS "https://github.com/gvlassis/m3_extra_utils/releases/latest/download/light_jade.vim"
+            curl -LOJsS "https://raw.githubusercontent.com/gvlassis/gems/refs/heads/main/vim/ruby.vim"
+            curl -LOJsS "https://raw.githubusercontent.com/gvlassis/gems/refs/heads/main/vim/light_ruby.vim"
+            curl -LOJsS "https://raw.githubusercontent.com/gvlassis/gems/refs/heads/main/vim/dark_ruby.vim"
 
-            curl -LOJsS "https://github.com/gvlassis/m3_extra_utils/releases/latest/download/dark_sapphire.vim"
-            curl -LOJsS "https://github.com/gvlassis/m3_extra_utils/releases/latest/download/light_sapphire.vim"
+            curl -LOJsS "https://raw.githubusercontent.com/gvlassis/gems/refs/heads/main/vim/sapphire.vim"
+            curl -LOJsS "https://raw.githubusercontent.com/gvlassis/gems/refs/heads/main/vim/light_sapphire.vim"
+            curl -LOJsS "https://raw.githubusercontent.com/gvlassis/gems/refs/heads/main/vim/dark_sapphire.vim"
 
-            curl -LOJsS "https://github.com/gvlassis/m3_extra_utils/releases/latest/download/dark_topaz.vim"
-            curl -LOJsS "https://github.com/gvlassis/m3_extra_utils/releases/latest/download/light_topaz.vim"
+            curl -LOJsS "https://raw.githubusercontent.com/gvlassis/gems/refs/heads/main/vim/spinel.vim"
+            curl -LOJsS "https://raw.githubusercontent.com/gvlassis/gems/refs/heads/main/vim/light_spinel.vim"
+            curl -LOJsS "https://raw.githubusercontent.com/gvlassis/gems/refs/heads/main/vim/dark_spinel.vim"
 
-            curl -LOJsS "https://github.com/gvlassis/m3_extra_utils/releases/latest/download/dark_amethyst.vim"
-            curl -LOJsS "https://github.com/gvlassis/m3_extra_utils/releases/latest/download/light_amethyst.vim"
-
-            curl -LOJsS "https://github.com/gvlassis/m3_extra_utils/releases/latest/download/dark_quartz.vim"
-            curl -LOJsS "https://github.com/gvlassis/m3_extra_utils/releases/latest/download/light_quartz.vim"
+            curl -LOJsS "https://raw.githubusercontent.com/gvlassis/gems/refs/heads/main/vim/topaz.vim"
+            curl -LOJsS "https://raw.githubusercontent.com/gvlassis/gems/refs/heads/main/vim/light_topaz.vim"
+            curl -LOJsS "https://raw.githubusercontent.com/gvlassis/gems/refs/heads/main/vim/dark_topaz.vim"
         )
 
         printf -- "-Installing neovim plugins\n"
