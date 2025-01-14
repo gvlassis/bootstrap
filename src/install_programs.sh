@@ -214,8 +214,8 @@ function install_programs(){
         printf -- "-Installing ipython\n"
         ${HOME}/.local/bin/micromamba run -n base pip3 install ipython &> "/dev/null"
 
-        printf -- "-Installing matplotlib-backend-kitty\n"
-        ${HOME}/.local/bin/micromamba run -n base pip3 install matplotlib-backend-kitty &> "/dev/null"
+        printf -- "-Installing kitcat\n"
+        ${HOME}/.local/bin/micromamba run -n base pip3 install kitcat &> "/dev/null"
     )
     rm -rf "${PWD}/tmp_bootstrap"
 }
