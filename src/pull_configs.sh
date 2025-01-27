@@ -41,29 +41,15 @@ function pull_configs(){
         goodls -u "https://drive.google.com/file/d/1-RRfDjOVctimSTZkCOstZdPQ-RqxT6m4/view?usp=sharing" &> "/dev/null"
     )
 
-    mkdir "${HOME}/.config/btop" &> "/dev/null"
-    (
-        cd "${HOME}/.config/btop"
+    if [ "${os}" = "Linux" ]; then
+        mkdir "${HOME}/.config/btop" &> "/dev/null"
+        (
+            cd "${HOME}/.config/btop"
 
-        # btop.conf
-        goodls -u "https://drive.google.com/file/d/1jogoEZ2ioyw86j3b5RkH3qrS_1MOs-YC/view?usp=sharing" &> "/dev/null"
-    )
-
-    mkdir "${HOME}/.config/nvtop" &> "/dev/null"
-    (
-        cd "${HOME}/.config/nvtop"
-
-        # nvtop.ini
-        goodls -u "https://drive.google.com/file/d/1QEIaIk4LiUt4vMPcl9GGmVpBN99YqwCl/view?usp=sharing" &> "/dev/null"
-    )
-
-    mkdir "${HOME}/.proxychains" &> "/dev/null"
-    (
-        cd "${HOME}/.proxychains"
-
-        # proxychains.conf
-        goodls -u "https://drive.google.com/file/d/1fPHiN92HZlF6EIAiRbDuZCa23dW48WOH/view?usp=sharing" &> "/dev/null"
-    )
+            # btop.conf
+            goodls -u "https://drive.google.com/file/d/1jogoEZ2ioyw86j3b5RkH3qrS_1MOs-YC/view?usp=sharing" &> "/dev/null"
+        )
+    fi
 
     mkdir -p "${HOME}/.ipython/profile_default" &> "/dev/null"
     (

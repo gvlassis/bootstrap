@@ -16,6 +16,7 @@ function install_programs(){
         eval "$(micromamba shell hook --shell "bash")"
         micromamba activate
 
+        # Two versions behind
         printf -- "-Installing Python, ncurses, git, unzip, make, gawk\n"
         micromamba -y install -c conda-forge python=3.11 ncurses git unzip make gawk &> "/dev/null"
 
@@ -89,16 +90,13 @@ function install_programs(){
         curl -LOJsS "https://github.com/zellij-org/zellij/releases/latest/download/zellij-$zellij_id.tar.gz"
         tar -xz -f ${PWD}/zellij*
         cp ${PWD}/zellij "${HOME}/.local/bin/zellij"
-
-        printf -- "-Installing btop\n"
-        goodls -u "${btop_id}" &> "/dev/null"
-        chmod a+x "${PWD}/btop"
-        cp "${PWD}/btop" "${HOME}/.local/bin"
-
-        printf -- "-Installing nvtop\n"
-        goodls -u "${nvtop_id}" &> "/dev/null"
-        chmod a+x "${PWD}/nvtop"
-        cp "${PWD}/nvtop" "${HOME}/.local/bin"
+        
+        if [ "${os}" = "Linux" ]; then
+            printf -- "-Installing btop\n"
+            goodls -u "${btop_id}" &> "/dev/null"
+            chmod a+x "${PWD}/btop"
+            cp "${PWD}/btop" "${HOME}/.local/bin"
+        fi
 
         printf -- "-Installing soft\n"
         git clone "https://github.com/gvlassis/soft.git" &> "/dev/null"
@@ -109,15 +107,6 @@ function install_programs(){
         rm -rf "${HOME}/Projects/soft"
         cp -R "${PWD}/soft" "${HOME}/Projects"
         ln -sf "${HOME}/Projects/soft/src/soft.sh" "${HOME}/.local/bin"
-
-        printf -- "-Installing proxychains\n"
-        goodls -u "${proxychains_id}" &> "/dev/null"
-        chmod a+x "${PWD}/proxychains4"
-        cp "${PWD}/proxychains4" "${HOME}/.local/bin"
-
-        printf -- "-Installing libproxychains\n"
-        goodls -u "${libproxychains_id}" &> "/dev/null"
-        cp ${PWD}/libproxychains4* "${HOME}/.local/bin"
 
         printf -- "-Installing kitty.bash\n"
         curl -LOJsS "https://raw.githubusercontent.com/kovidgoyal/kitty/master/shell-integration/bash/kitty.bash"
@@ -130,11 +119,13 @@ function install_programs(){
         cp "${PWD}/xterm-kitty" "${HOME}/.terminfo/x"
 
         printf -- "-Installing neovim\n"
-        curl -LOJsS "${neovim_id}"
-        tar -xz -f ${PWD}/nvim*
-        cp ${PWD}/nvim*/bin/nvim "${HOME}/.local/bin"
-        cp -r ${PWD}/nvim*/lib/* "${HOME}/.local/lib"
-        cp -r ${PWD}/nvim*/share/nvim "${HOME}/.local/share"
+        goodls -u "${neovim_id}" &> "/dev/null"
+        tar -x -f ${PWD}/nvim.tar
+        mkdir "${HOME}/.local/lib/nvim" &> "/dev/null"
+        mkdir "${HOME}/.local/share/nvim" &> "/dev/null"
+        cp ${PWD}/nvim/bin/nvim "${HOME}/.local/bin"
+        cp -r ${PWD}/nvim/lib/* "${HOME}/.local/lib/nvim"
+        cp -r ${PWD}/nvim/share/* "${HOME}/.local/share/nvim"
         
         printf -- "-Installing vim-plug\n"
         curl -LOJsS "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
