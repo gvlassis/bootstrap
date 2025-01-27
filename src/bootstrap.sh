@@ -13,6 +13,8 @@ printf "Creating directories\n"
 . "${src_path}/create_dirs.sh"
 create_dirs
 touch "${HOME}/.hushlogin"
+rm -rf "${HOME}/.bash_login"
+rm -rf "${HOME}/.profile"
 
 printf "Installing programs\n"
 . "${src_path}/install_programs.sh"
