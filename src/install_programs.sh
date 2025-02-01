@@ -17,8 +17,8 @@ function install_programs(){
         micromamba activate
 
         # Two versions behind
-        printf -- "-Installing Python, ncurses, git, unzip, make, gawk\n"
-        micromamba -y install -c conda-forge python=3.11 ncurses git unzip make gawk &> "/dev/null"
+        printf -- "-Installing Python, unzip, make, gawk\n"
+        micromamba -y install -c conda-forge python=3.11 unzip make gawk &> "/dev/null"
 
         printf -- "-Installing goodls\n"
         curl -LOJsS "https://github.com/tanaikech/goodls/releases/latest/download/goodls_${goodls_id}"
