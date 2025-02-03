@@ -207,6 +207,9 @@ function install_programs(){
 
         printf -- "-Installing kitcat\n"
         ${HOME}/.local/bin/micromamba run -n base pip3 install kitcat &> "/dev/null"
+
+        printf -- "-Installing matrixplot\n"
+        ${HOME}/.local/bin/micromamba run -n base pip3 install matrixplot &> "/dev/null"
     )
     rm -rf "${PWD}/tmp_bootstrap"
 }
