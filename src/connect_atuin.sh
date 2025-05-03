@@ -1,14 +1,19 @@
 function connect_atuin(){
-    local username="${1}"
+    local atuin_username="${1}"
+    local atuin_password="${2}"
 
     PATH="${HOME}/.local/bin:${PATH}"
 
-    while ! atuin status | grep "Remote" &> "/dev/null"; do
-        printf "\e[31mNot logged in Atuin\e[0m\n"
-        read -s -p "password:" password
-        printf "\n"
-        atuin login -u "${username}" -k "" -p "${password}" &> "/dev/null"
-    done
+    if atuin status | grep "Remote" &> "/dev/null"; then
+        printf "\x1b[32mSuccess :)\x1b[0m\n"
+    else
+        atuin login -u "${atuin_username}" -k "" -p "${atuin_password}" &> "/dev/null"
 
-    printf "\x1b[32mSuccess!\x1b[0m\n"
+        if atuin status | grep "Remote" &> "/dev/null"; then
+            printf "\x1b[32mSuccess :)\x1b[0m\n"
+        else
+            printf "\x1b[31mFailure :(\x1b[0m\n"
+            exit 2
+        fi
+    fi
 }
