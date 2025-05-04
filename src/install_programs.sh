@@ -20,17 +20,13 @@ function install_programs(){
         printf -- "-Installing Python, unzip, make, gawk\n"
         micromamba -y install -c conda-forge python=3.11 unzip make gawk &> "/dev/null"
 
-        printf -- "-Installing goodls\n"
-        curl -LOJsS "https://github.com/tanaikech/goodls/releases/latest/download/goodls_${goodls_id}"
-        chmod a+x ${PWD}/goodls*
-        cp ${PWD}/goodls* "${HOME}/.local/bin/goodls"
+        printf -- "-Installing gdown\n"
+        micromamba run -n base pip3 install gdown &> "/dev/null"
 
         printf -- "-Installing atuin\n"
         # Fixes Error: unexpected trailing characters
         rm -rf "${HOME}/.local/share/atuin/last_sync_time"
-        printf "${atuin_id}\n"
-        goodls --help
-        goodls -u "${atuin_id}"
+        gdown --fuzzy "${atuin_id}" &> "/dev/null"
         chmod a+x "${PWD}/atuin"
         cp "${PWD}/atuin" "${HOME}/.local/bin"
 
@@ -45,7 +41,7 @@ function install_programs(){
         ln -sf "${HOME}/Projects/bashrc_utils" "${HOME}/.local/share"
 
         printf -- "-Installing catimg\n"
-        goodls -u "${catimg_id}" &> "/dev/null"
+        gdown --fuzzy "${catimg_id}" &> "/dev/null"
         chmod a+x "${PWD}/catimg"
         cp "${PWD}/catimg" "${HOME}/.local/bin"
 
@@ -54,12 +50,12 @@ function install_programs(){
         cp "${PWD}/git-prompt.sh" "${HOME}/.local/share"
 
         printf -- "-Installing nnn\n"
-        goodls -u "${nnn_id}" &> "/dev/null"
+        gdown --fuzzy "${nnn_id}" &> "/dev/null"
         chmod a+x "${PWD}/nnn"
         cp "${PWD}/nnn" "${HOME}/.local/bin"
 
         printf -- "-Installing quit.cd\n"
-        goodls -u "https://drive.google.com/file/d/1xCKAoA0p8Nu8EnECJeZbjtpzMyNEUUwh/view?usp=sharing" &> "/dev/null"
+        gdown --fuzzy "https://drive.google.com/file/d/1xCKAoA0p8Nu8EnECJeZbjtpzMyNEUUwh/view?usp=sharing" &> "/dev/null"
         mkdir "${HOME}/.local/share/nnn" &> "/dev/null"
         cp "${PWD}/quitcd.sh" "${HOME}/.local/share/nnn"
 
@@ -86,7 +82,7 @@ function install_programs(){
         )
 
         printf -- "-Installing Python requests\n"
-        ${HOME}/.local/bin/micromamba run -n base pip3 install requests &> "/dev/null"
+        micromamba run -n base pip3 install requests &> "/dev/null"
 
         printf -- "-Installing zellij\n"
         curl -LOJsS "https://github.com/zellij-org/zellij/releases/latest/download/zellij-$zellij_id.tar.gz"
@@ -95,7 +91,7 @@ function install_programs(){
         
         if [ "${os}" = "Linux" ]; then
             printf -- "-Installing btop\n"
-            goodls -u "${btop_id}" &> "/dev/null"
+            gdown --fuzzy "${btop_id}" &> "/dev/null"
             chmod a+x "${PWD}/btop"
             cp "${PWD}/btop" "${HOME}/.local/bin"
         fi
@@ -121,7 +117,7 @@ function install_programs(){
         cp "${PWD}/xterm-kitty" "${HOME}/.terminfo/x"
 
         printf -- "-Installing neovim\n"
-        goodls -u "${neovim_id}" &> "/dev/null"
+        gdown --fuzzy "${neovim_id}" &> "/dev/null"
         tar -x -f ${PWD}/nvim.tar
         mkdir "${HOME}/.local/lib/nvim" &> "/dev/null"
         mkdir "${HOME}/.local/share/nvim" &> "/dev/null"
@@ -140,10 +136,10 @@ function install_programs(){
             cd "${HOME}/.config/nvim"
 
             # init.lua
-            goodls -u "https://drive.google.com/file/d/1RzO8knUUz1ZevYWEnCceFQemUFE8Eg6E/view?usp=sharing" &> "/dev/null"
+            gdown --fuzzy "https://drive.google.com/file/d/1RzO8knUUz1ZevYWEnCceFQemUFE8Eg6E/view?usp=sharing" &> "/dev/null"
 
             # .vimrc
-            goodls -u "https://drive.google.com/file/d/1zuN5d0jc09QmWGeIuI2Y4dp9Cn7PA78j/view?usp=sharing" &> "/dev/null"
+            gdown --fuzzy "https://drive.google.com/file/d/1zuN5d0jc09QmWGeIuI2Y4dp9Cn7PA78j/view?usp=sharing" &> "/dev/null"
         )
 
         mkdir "${HOME}/.config/nvim/colors" &> "/dev/null"
@@ -199,19 +195,19 @@ function install_programs(){
         git clone "https://github.com/gvlassis/termpdf.py" &> "/dev/null"
         (
             cd termpdf.py
-            ${HOME}/.local/bin/micromamba run -n base pip3 install PyMuPDF &> "/dev/null"
-            ${HOME}/.local/bin/micromamba run -n base pip3 install -r requirements.txt &> "/dev/null"
-            ${HOME}/.local/bin/micromamba run -n base pip3 install . &> "/dev/null"
+            micromamba run -n base pip3 install PyMuPDF &> "/dev/null"
+            micromamba run -n base pip3 install -r requirements.txt &> "/dev/null"
+            micromamba run -n base pip3 install . &> "/dev/null"
         )
         
         printf -- "-Installing ipython\n"
-        ${HOME}/.local/bin/micromamba run -n base pip3 install ipython &> "/dev/null"
+        micromamba run -n base pip3 install ipython &> "/dev/null"
 
         printf -- "-Installing kitcat\n"
-        ${HOME}/.local/bin/micromamba run -n base pip3 install kitcat &> "/dev/null"
+        micromamba run -n base pip3 install kitcat &> "/dev/null"
 
         printf -- "-Installing matrixplot\n"
-        ${HOME}/.local/bin/micromamba run -n base pip3 install matrixplot &> "/dev/null"
+        micromamba run -n base pip3 install matrixplot &> "/dev/null"
     )
     rm -rf "${PWD}/tmp_bootstrap"
 }
