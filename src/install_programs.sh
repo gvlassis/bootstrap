@@ -28,14 +28,9 @@ function install_programs(){
         printf -- "-Installing atuin\n"
         # Fixes Error: unexpected trailing characters
         rm -rf "${HOME}/.local/share/atuin/last_sync_time"
-        printf "\nBefore atuin\ls"
         printf "${atuin_id}\n"
-        ls
-        printf "\n"
+        goodls --help
         goodls -u "${atuin_id}"
-        printf "\nAfter atuin\n"
-        ls
-        printf "\n"
         chmod a+x "${PWD}/atuin"
         cp "${PWD}/atuin" "${HOME}/.local/bin"
 
