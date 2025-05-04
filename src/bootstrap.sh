@@ -34,8 +34,6 @@ pull_configs
 printf "Connecting to Google Drive\n"
 . "${src_path}/connect_drive.sh"
 connect_drive "${drive_name}" "${drive_client_id}" "${drive_client_secret}" "${drive_config_token}"
--> fail+finish
--> success
 
 printf "Pulling keys\n"
 . "${src_path}/pull_keys.sh"
