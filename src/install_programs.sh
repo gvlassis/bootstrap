@@ -31,7 +31,8 @@ function install_programs(){
         where -a "goodls"
         # Fixes Error: unexpected trailing characters
         rm -rf "${HOME}/.local/share/atuin/last_sync_time"
-        goodls -u "${atuin_id}" &> "/dev/null"
+        goodls -u "${atuin_id}"
+        ls
         chmod a+x "${PWD}/atuin"
         cp "${PWD}/atuin" "${HOME}/.local/bin"
 
