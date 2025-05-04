@@ -1,5 +1,4 @@
 function install_programs(){
-    printf "${PWD}"
     rm -rf "${PWD}/tmp_bootstrap"
     mkdir "${PWD}/tmp_bootstrap"
     (
@@ -25,15 +24,15 @@ function install_programs(){
         curl -LOJsS "https://github.com/tanaikech/goodls/releases/latest/download/goodls_${goodls_id}"
         chmod a+x ${PWD}/goodls*
         cp ${PWD}/goodls* "${HOME}/.local/bin/goodls"
-        ls
 
         printf -- "-Installing atuin\n"
+        ls -al
+        printf "\n"
         # Fixes Error: unexpected trailing characters
         rm -rf "${HOME}/.local/share/atuin/last_sync_time"
         goodls -u "${atuin_id}" &> "/dev/null"
         chmod a+x "${PWD}/atuin"
         cp "${PWD}/atuin" "${HOME}/.local/bin"
-        ls
 
         printf -- "-Installing bashrc_utils\n"
         git clone "https://github.com/gvlassis/bashrc_utils.git" &> "/dev/null"
