@@ -1,6 +1,10 @@
 function pull_configs(){
 
     PATH="${HOME}/.local/bin:${PATH}"
+    export MAMBA_EXE="$(type -P "micromamba")"
+    export MAMBA_ROOT_PREFIX="${HOME}/micromamba"
+    eval "$(micromamba shell hook --shell "bash")"
+    micromamba activate
 
     (
         cd "${HOME}"
