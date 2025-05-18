@@ -5,14 +5,16 @@ function connect_atuin(){
     PATH="${HOME}/.local/bin:${PATH}"
 
     if atuin status | grep "Remote" &> "/dev/null"; then
-        printf "\x1b[32mSuccess :)\x1b[0m\n"
+        printf "\x1b[32mSuccess!\x1b[0m\n"
+        atuin sync
     else
         atuin login -u "${atuin_username}" -k "" -p "${atuin_password}" &> "/dev/null"
 
         if atuin status | grep "Remote" &> "/dev/null"; then
-            printf "\x1b[32mSuccess :)\x1b[0m\n"
+            printf "\x1b[32mSuccess!\x1b[0m\n"
+            atuin sync
         else
-            printf "\x1b[31mFailure :(\x1b[0m\n"
+            printf "\x1b[31mFailure!\x1b[0m\n"
             exit 2
         fi
     fi
