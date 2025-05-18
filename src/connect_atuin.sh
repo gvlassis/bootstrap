@@ -6,16 +6,18 @@ function connect_atuin(){
 
     if atuin status | grep "Remote" &> "/dev/null"; then
         printf "\x1b[32mSuccess!\x1b[0m\n"
-        atuin sync
     else
         atuin login -u "${atuin_username}" -k "" -p "${atuin_password}" &> "/dev/null"
 
         if atuin status | grep "Remote" &> "/dev/null"; then
             printf "\x1b[32mSuccess!\x1b[0m\n"
-            atuin sync
         else
             printf "\x1b[31mFailure!\x1b[0m\n"
             exit 2
         fi
     fi
+
+    # Fixes: attempting to decrypt with incorrect key
+    atuin store purge
+    atuin sync
 }
