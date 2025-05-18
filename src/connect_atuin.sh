@@ -18,6 +18,6 @@ function connect_atuin(){
     fi
 
     # Fixes: attempting to decrypt with incorrect key
-    atuin store purge
-    atuin sync
+    atuin store purge &> "/dev/null"
+    atuin sync &> "/dev/null"
 }
