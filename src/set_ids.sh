@@ -10,7 +10,7 @@ function set_ids(){
         nnn_id="https://drive.google.com/file/d/1zEWOUu8GDRPRQGek4qmioVMdpgJk2-lS/view?usp=drive_link"
         rclone_id="osx-arm64"
         zellij_id="aarch64-apple-darwin"
-        neovim_id="https://drive.google.com/file/d/1_DsWp-zuhOAQx4vcaqSqa417DDZ5zPw_/view?usp=drive_link"
+        neovim_id="https://drive.google.com/file/d/1zjs9k2Sf8Q_BrJ5Wpq__a3R2__TfmZVC/view?usp=drive_link"
     elif [ "${os}" = "Linux" ]; then
         local arch="$(uname -m)"
         if [ "${arch}" = "x86_64" ]; then
@@ -22,7 +22,7 @@ function set_ids(){
             rclone_id="linux-amd64"
             zellij_id="x86_64-unknown-linux-musl"
             btop_id="https://drive.google.com/file/d/1hQN48E3qfNP-S7VAkEL_IJLjTVxBsnNi/view?usp=drive_link"
-            neovim_id="https://drive.google.com/file/d/1UhzL-MQYO1UYLTVhTiEfBL2pR-zXISFa/view?usp=drive_link"
+            neovim_id="https://drive.google.com/file/d/1KVVzTw1FIwimk_pGnj_hUmamzgCe7KG6/view?usp=drive_link"
         elif [ "${arch}" = "aarch64" ]; then
             printf "\x1b[32mLinux-Arm (supported) detected\x1b[0m\n"
             atuin_id="https://drive.google.com/file/d/1WS5lrtMKeQPpG-kxFqlAMPVABVTlH5qh/view?usp=drive_link"
@@ -32,7 +32,7 @@ function set_ids(){
             rclone_id="linux-arm64"
             zellij_id="aarch64-unknown-linux-musl"
             btop_id="https://drive.google.com/file/d/1WFTbLcg9JqR_T5mFabB6-8xuURbimFVT/view?usp=drive_link"
-            neovim_id="https://drive.google.com/file/d/16Ep05z36ZuaJMolLcoXOL8gjia_M-QQ4/view?usp=drive_link"
+            neovim_id="https://drive.google.com/file/d/16VWfIrIJDVXU3NKzIVZkXy9MX8KeiEZg/view?usp=drive_link"
         fi
     fi
 }

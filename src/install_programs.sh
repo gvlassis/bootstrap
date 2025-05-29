@@ -118,12 +118,8 @@ function install_programs(){
 
         printf -- "-Installing neovim\n"
         gdown --fuzzy "${neovim_id}" &> "/dev/null"
-        tar -x -f ${PWD}/nvim.tar
-        mkdir "${HOME}/.local/lib/nvim" &> "/dev/null"
-        mkdir "${HOME}/.local/share/nvim" &> "/dev/null"
-        cp ${PWD}/nvim/bin/nvim "${HOME}/.local/bin"
-        cp -r ${PWD}/nvim/lib/* "${HOME}/.local/lib/nvim"
-        cp -r ${PWD}/nvim/share/* "${HOME}/.local/share/nvim"
+        chmod a+x "${PWD}/nvim"
+        cp "${PWD}/nvim" "${HOME}/.local/bin"
         
         printf -- "-Installing vim-plug\n"
         curl -LOJsS "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
@@ -208,6 +204,9 @@ function install_programs(){
 
         printf -- "-Installing matrixplot\n"
         micromamba run -n base pip3 install matrixplot &> "/dev/null"
+
+        printf -- "-Installing gvtop\n"
+        micromamba run -n base pip3 install git+https://github.com/gvlassis/gvtop &> "/dev/null"
     )
     rm -rf "${PWD}/tmp_bootstrap"
 }
