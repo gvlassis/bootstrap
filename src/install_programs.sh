@@ -18,7 +18,7 @@ function install_programs(){
 
         # Two versions behind
         printf -- "-Installing Python, unzip, make, gawk\n"
-        micromamba -y install -c conda-forge python=3.11 unzip make gawk &> "/dev/null"
+        micromamba -y install -c conda-forge python=3.13 unzip make gawk &> "/dev/null"
 
         printf -- "-Installing gdown\n"
         micromamba run -n base pip3 install gdown &> "/dev/null"
