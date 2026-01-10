@@ -17,8 +17,8 @@ function install_programs(){
         micromamba activate
 
         # Two versions behind
-        printf -- "-Installing Python, unzip, make, gawk\n"
-        micromamba -y install -c conda-forge python=3.13 unzip make gawk &> "/dev/null"
+        printf -- "-Installing Python, unzip, make, gawk, Node.js\n"
+        micromamba -y install -c conda-forge python=3.13 unzip make gawk nodejs &> "/dev/null"
 
         printf -- "-Installing gdown\n"
         micromamba run -n base pip3 install gdown &> "/dev/null"
@@ -211,6 +211,9 @@ function install_programs(){
 
         printf -- "-Installing gvtop\n"
         micromamba run -n base pip3 install git+https://github.com/gvlassis/gvtop &> "/dev/null"
+
+        printf -- "-Installing OpenCode\n"
+        micromamba run -n base npm install -g opencode-ai@latest &> "/dev/null"
     )
     rm -rf "${PWD}/tmp_bootstrap"
 }
