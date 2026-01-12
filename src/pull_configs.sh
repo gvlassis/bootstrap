@@ -62,4 +62,12 @@ function pull_configs(){
         # ipython_config.py
         gdown --fuzzy "https://drive.google.com/file/d/1ZX7EflGFNWB-0Ni5WgKfVHH9WRQqOAQh/view?usp=sharing" &> "/dev/null"
     )
+
+    mkdir "${HOME}/.config/opencode" &> "/dev/null"
+    (
+        cd "${HOME}/.config/opencode"
+
+        # opencode.json
+        gdown --fuzzy "https://drive.google.com/file/d/12jC3gmTvWp9s8aLtHaf0zYU4MSDt4YsS/view?usp=sharing" &> "/dev/null"
+    )
 }

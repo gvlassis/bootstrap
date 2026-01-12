@@ -10,4 +10,7 @@ function pull_keys(){
 
     mkdir "${HOME}/.local/share/atuin" &> "/dev/null"
     rclone sync ${name}:Keys "${HOME}/.local/share/atuin" --include "key" &> "/dev/null"
+
+    mkdir "${HOME}/.local/share/opencode" &> "/dev/null"
+    rclone sync ${name}:Keys "${HOME}/.local/share/opencode" --include "auth.json" &> "/dev/null"
 }

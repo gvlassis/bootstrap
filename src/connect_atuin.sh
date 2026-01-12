@@ -4,7 +4,7 @@ function connect_atuin(){
 
     PATH="${HOME}/.local/bin:${PATH}"
 
-    if atuin status | grep "Remote" &> "/dev/null"; then
+    if atuin status 2> "/dev/null" | grep "Remote" &> "/dev/null"; then
         printf "\x1b[32mSuccess!\x1b[0m\n"
     else
         atuin login -u "${atuin_username}" -k "" -p "${atuin_password}" &> "/dev/null"
