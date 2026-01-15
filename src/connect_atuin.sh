@@ -4,20 +4,9 @@ function connect_atuin(){
 
     PATH="${HOME}/.local/bin:${PATH}"
 
-    if atuin status 2> "/dev/null" | grep "Remote" &> "/dev/null"; then
-        printf "\x1b[32mSuccess!\x1b[0m\n"
-    else
-        atuin login -u "${atuin_username}" -k "" -p "${atuin_password}" &> "/dev/null"
-
-        if atuin status | grep "Remote" &> "/dev/null"; then
-            printf "\x1b[32mSuccess!\x1b[0m\n"
-        else
-            printf "\x1b[31mFailure!\x1b[0m\n"
-            exit 2
-        fi
-    fi
+    atuin login -u "${atuin_username}" -k "" -p "${atuin_password}"
 
     # Fixes: attempting to decrypt with incorrect key
-    atuin store purge &> "/dev/null"
-    atuin sync &> "/dev/null"
+    atuin store purge
+    atuin sync
 }

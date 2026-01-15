@@ -16,31 +16,31 @@ set_ids
 . "${src_path}/utils.sh"
 check_dependencies bzip2
 
-printf "Creating directories\n"
+printf "\x1b[1;34mCreating directories\x1b[0m\n"
 . "${src_path}/create_dirs.sh"
 create_dirs
 touch "${HOME}/.hushlogin"
 rm -rf "${HOME}/.bash_login"
 rm -rf "${HOME}/.profile"
 
-printf "Installing programs\n"
+printf "\x1b[1;34mInstalling programs\x1b[0m\n"
 . "${src_path}/install_programs.sh"
 install_programs
 
-printf "Pulling configs\n"
+printf "\x1b[1;34mPulling configs\x1b[0m\n"
 . "${src_path}/pull_configs.sh"
 pull_configs
 
-printf "Connecting to Google Drive\n"
+printf "\x1b[1;34mConnecting to Google Drive\x1b[0m\n"
 . "${src_path}/connect_drive.sh"
 connect_drive "${drive_name}" "${drive_client_id}" "${drive_client_secret}" "${drive_config_token}"
 
-printf "Pulling keys\n"
+printf "\x1b[1;34mPulling keys\x1b[0m\n"
 . "${src_path}/pull_keys.sh"
 pull_keys "${drive_name}"
 
-printf "Connecting to Atuin\n"
+printf "\x1b[1;34mConnecting to Atuin\x1b[0m\n"
 . "${src_path}/connect_atuin.sh"
 connect_atuin "${atuin_username}" "${atuin_password}"
 
-printf "\x1b[1mBootstrapping finished\x1b[0m\n"
+printf "\x1b[1m🥾Bootstrapping finished\x1b[0m\n"
