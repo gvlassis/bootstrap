@@ -63,11 +63,11 @@ function pull_configs(){
         gdown --fuzzy "https://drive.google.com/file/d/1ZX7EflGFNWB-0Ni5WgKfVHH9WRQqOAQh/view?usp=sharing" 
     )
 
-    mkdir "${HOME}/.config/opencode"
+    mkdir "${HOME}/.codex"
     (
-        cd "${HOME}/.config/opencode"
+        cd "${HOME}/.codex"
 
-        # opencode.json
-        gdown --fuzzy "https://drive.google.com/file/d/12jC3gmTvWp9s8aLtHaf0zYU4MSDt4YsS/view?usp=sharing"
+        # config.toml
+        gdown --fuzzy "https://drive.google.com/file/d/1SgwTSvwhhptEAOQPGM40-42WpzWkyWa0/view?usp=sharing"
     )
 }

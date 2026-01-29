@@ -212,8 +212,8 @@ function install_programs(){
         printf "\x1b[3;35mInstalling gvtop\x1b[0m\n"
         micromamba run -n base pip3 install git+https://github.com/gvlassis/gvtop
 
-        printf "\x1b[3;35mInstalling OpenCode\x1b[0m\n"
-        micromamba run -n base npm install -g opencode-ai@latest
+        printf "\x1b[3;35mInstalling Codex\x1b[0m\n"
+        micromamba run -n base npm install -g @openai/codex@latest
     )
     rm -rf "${PWD}/tmp_bootstrap"
 }
