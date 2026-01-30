@@ -8,9 +8,6 @@ function pull_keys(){
     # SSH keys require specific permissions
     chmod 600 "${HOME}/.ssh/id_rsa" "${HOME}/.ssh/id_dsa" "${HOME}/.ssh/id_ecdsa" "${HOME}/.ssh/id_ed25519"
 
-    # mkdir "${HOME}/.local/share/atuin"
-    # rclone sync ${name}:Keys "${HOME}/.local/share/atuin" --include "key"
-
     mkdir "${HOME}/.codex"
     rclone sync ${name}:Keys "${HOME}/.codex" --include "auth.json"
 }

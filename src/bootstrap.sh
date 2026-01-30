@@ -4,6 +4,7 @@ drive_client_secret="${3}"
 drive_config_token="${4}"
 atuin_username="${5}"
 atuin_password="${6}"
+atuin_key="${7}"
 
 printf "\x1b[1m🥾Starting bootstrap\x1b[0m\n"
 
@@ -41,6 +42,6 @@ pull_keys "${drive_name}"
 
 printf "\x1b[1;34mConnecting to Atuin\x1b[0m\n"
 . "${src_path}/connect_atuin.sh"
-connect_atuin "${atuin_username}" "${atuin_password}"
+connect_atuin "${atuin_username}" "${atuin_password}" "${atuin_key}"
 
 printf "\x1b[1m🥾Bootstrapping finished\x1b[0m\n"
