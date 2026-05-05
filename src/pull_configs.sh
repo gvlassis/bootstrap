@@ -10,15 +10,15 @@ function pull_configs(){
         cd "${HOME}"
 
         # .bash_profile
-        gdown --fuzzy "https://drive.google.com/file/d/1wy6Pk8BHd_IPZOlDHDV3DqY3kOXytMzd/view?usp=sharing"
+        gdown "https://drive.google.com/file/d/1wy6Pk8BHd_IPZOlDHDV3DqY3kOXytMzd/view?usp=sharing"
         # .bashrc
-        gdown --fuzzy "https://drive.google.com/file/d/100z8qv0rgKK0jcJY7DwmyVeECFEDlx9P/view?usp=sharing"
+        gdown "https://drive.google.com/file/d/100z8qv0rgKK0jcJY7DwmyVeECFEDlx9P/view?usp=sharing"
         # .blerc
-        gdown --fuzzy "https://drive.google.com/file/d/13Hwo8vRJNNyVAopGYKIvs-RJHfUzNqlF/view?usp=sharing"
+        gdown "https://drive.google.com/file/d/13Hwo8vRJNNyVAopGYKIvs-RJHfUzNqlF/view?usp=sharing"
         # .condarc
-        gdown --fuzzy "https://drive.google.com/file/d/1GW0pMDSG7AR0YcEN19qxuJLnf6ogzNdI/view?usp=sharing"
+        gdown "https://drive.google.com/file/d/1GW0pMDSG7AR0YcEN19qxuJLnf6ogzNdI/view?usp=sharing"
         # .gitconfig
-        gdown --fuzzy "https://drive.google.com/file/d/1bV9GT4um_0RpDxLIdjkZ-7Q8cMk6BJ6U/view?usp=sharing"
+        gdown "https://drive.google.com/file/d/1bV9GT4um_0RpDxLIdjkZ-7Q8cMk6BJ6U/view?usp=sharing"
     )
 
     mkdir "${HOME}/.ssh"
@@ -26,7 +26,7 @@ function pull_configs(){
         cd "${HOME}/.ssh"
 
         # config
-        gdown --fuzzy "https://drive.google.com/file/d/1u94i3xI0keixo3e1Lfv_ZFMrWLFUh7bm/view?usp=sharing"
+        gdown "https://drive.google.com/file/d/1u94i3xI0keixo3e1Lfv_ZFMrWLFUh7bm/view?usp=sharing"
     )
 
     mkdir "${HOME}/.config/atuin"
@@ -34,7 +34,7 @@ function pull_configs(){
         cd "${HOME}/.config/atuin"
 
         # config.toml
-        gdown --fuzzy "https://drive.google.com/file/d/1OWHbmENvfx-RNvxYJUL51WLzt5UoSVWi/view?usp=sharing" 
+        gdown "https://drive.google.com/file/d/1OWHbmENvfx-RNvxYJUL51WLzt5UoSVWi/view?usp=sharing" 
     )
 
     mkdir "${HOME}/.config/zellij"
@@ -42,7 +42,7 @@ function pull_configs(){
         cd "${HOME}/.config/zellij"
 
         # config.kdl
-        gdown --fuzzy "https://drive.google.com/file/d/1-RRfDjOVctimSTZkCOstZdPQ-RqxT6m4/view?usp=sharing"
+        gdown "https://drive.google.com/file/d/1-RRfDjOVctimSTZkCOstZdPQ-RqxT6m4/view?usp=sharing"
     )
 
     if [ "${os}" = "Linux" ]; then
@@ -51,7 +51,7 @@ function pull_configs(){
             cd "${HOME}/.config/btop"
 
             # btop.conf
-            gdown --fuzzy "https://drive.google.com/file/d/1jogoEZ2ioyw86j3b5RkH3qrS_1MOs-YC/view?usp=sharing"
+            gdown "https://drive.google.com/file/d/1jogoEZ2ioyw86j3b5RkH3qrS_1MOs-YC/view?usp=sharing"
         )
     fi
 
@@ -60,7 +60,7 @@ function pull_configs(){
         cd "${HOME}/.ipython/profile_default"
 
         # ipython_config.py
-        gdown --fuzzy "https://drive.google.com/file/d/1ZX7EflGFNWB-0Ni5WgKfVHH9WRQqOAQh/view?usp=sharing" 
+        gdown "https://drive.google.com/file/d/1ZX7EflGFNWB-0Ni5WgKfVHH9WRQqOAQh/view?usp=sharing" 
     )
 
     mkdir "${HOME}/.codex"
@@ -68,6 +68,6 @@ function pull_configs(){
         cd "${HOME}/.codex"
 
         # config.toml
-        gdown --fuzzy "https://drive.google.com/file/d/1SgwTSvwhhptEAOQPGM40-42WpzWkyWa0/view?usp=sharing"
+        gdown "https://drive.google.com/file/d/1SgwTSvwhhptEAOQPGM40-42WpzWkyWa0/view?usp=sharing"
     )
 }

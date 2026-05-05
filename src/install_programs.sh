@@ -26,7 +26,7 @@ function install_programs(){
         printf "\x1b[3;35mInstalling atuin\x1b[0m\n"
         # Fixes Error: unexpected trailing characters
         rm -rf "${HOME}/.local/share/atuin/last_sync_time"
-        gdown --fuzzy "${atuin_id}"
+        gdown "${atuin_id}"
         chmod a+x "${PWD}/atuin"
         cp "${PWD}/atuin" "${HOME}/.local/bin"
 
@@ -41,7 +41,7 @@ function install_programs(){
         ln -sf "${HOME}/Projects/bashrc_utils" "${HOME}/.local/share"
 
         printf "\x1b[3;35mInstalling catimg\x1b[0m\n"
-        gdown --fuzzy "${catimg_id}"
+        gdown "${catimg_id}"
         chmod a+x "${PWD}/catimg"
         cp "${PWD}/catimg" "${HOME}/.local/bin"
 
@@ -50,12 +50,12 @@ function install_programs(){
         cp "${PWD}/git-prompt.sh" "${HOME}/.local/share"
 
         printf "\x1b[3;35mInstalling nnn\x1b[0m\n"
-        gdown --fuzzy "${nnn_id}"
+        gdown "${nnn_id}"
         chmod a+x "${PWD}/nnn"
         cp "${PWD}/nnn" "${HOME}/.local/bin"
 
         printf "\x1b[3;35mInstalling quit.cd\x1b[0m\n"
-        gdown --fuzzy "https://drive.google.com/file/d/1xCKAoA0p8Nu8EnECJeZbjtpzMyNEUUwh/view?usp=sharing"
+        gdown "https://drive.google.com/file/d/1xCKAoA0p8Nu8EnECJeZbjtpzMyNEUUwh/view?usp=sharing"
         mkdir "${HOME}/.local/share/nnn"
         cp "${PWD}/quitcd.sh" "${HOME}/.local/share/nnn"
 
@@ -91,7 +91,7 @@ function install_programs(){
         
         if [ "${os}" = "Linux" ]; then
             printf "\x1b[3;35mInstalling btop\x1b[0m\n"
-            gdown --fuzzy "${btop_id}"
+            gdown "${btop_id}"
             chmod a+x "${PWD}/btop"
             cp "${PWD}/btop" "${HOME}/.local/bin"
         fi
@@ -117,7 +117,7 @@ function install_programs(){
         cp "${PWD}/xterm-kitty" "${HOME}/.terminfo/x"
 
         printf "\x1b[3;35mInstalling neovim\x1b[0m\n"
-        gdown --fuzzy "${neovim_id}"
+        gdown "${neovim_id}"
         tar -x -f ${PWD}/nvim.tar
         mkdir "${HOME}/.local/lib/nvim"
         mkdir "${HOME}/.local/share/nvim"
@@ -136,10 +136,10 @@ function install_programs(){
             cd "${HOME}/.config/nvim"
 
             # init.lua
-            gdown --fuzzy "https://drive.google.com/file/d/1RzO8knUUz1ZevYWEnCceFQemUFE8Eg6E/view?usp=sharing"
+            gdown "https://drive.google.com/file/d/1RzO8knUUz1ZevYWEnCceFQemUFE8Eg6E/view?usp=sharing"
 
             # .vimrc
-            gdown --fuzzy "https://drive.google.com/file/d/1zuN5d0jc09QmWGeIuI2Y4dp9Cn7PA78j/view?usp=sharing"
+            gdown "https://drive.google.com/file/d/1zuN5d0jc09QmWGeIuI2Y4dp9Cn7PA78j/view?usp=sharing"
         )
 
         mkdir "${HOME}/.config/nvim/colors"
