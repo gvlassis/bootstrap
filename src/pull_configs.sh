@@ -34,7 +34,7 @@ function pull_configs(){
         cd "${HOME}/.config/atuin"
 
         # config.toml
-        gdown "https://drive.google.com/file/d/1SgwTSvwhhptEAOQPGM40-42WpzWkyWa0/view?usp=sharing"
+        gdown "https://drive.google.com/file/d/1kTmVir92aSdbOdO34yivE5KOBJz2_681/view?usp=sharing" -O config.toml
     )
 
     mkdir "${HOME}/.config/zellij"
@@ -68,7 +68,7 @@ function pull_configs(){
         cd "${HOME}/.codex"
 
         # config.toml
-        gdown "https://drive.google.com/file/d/1SgwTSvwhhptEAOQPGM40-42WpzWkyWa0/view?usp=sharing"
+        gdown "https://drive.google.com/file/d/1s4lAvTXG9gYrq2RkqIaBkrg2_ayAim9y/view?usp=sharing" -O config.toml
     )
 
     mkdir "${HOME}/.claude"
