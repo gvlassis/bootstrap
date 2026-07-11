@@ -34,7 +34,7 @@ function pull_configs(){
         cd "${HOME}/.config/atuin"
 
         # config.toml
-        gdown "https://drive.google.com/file/d/1OWHbmENvfx-RNvxYJUL51WLzt5UoSVWi/view?usp=sharing" 
+        gdown "https://drive.google.com/file/d/1SgwTSvwhhptEAOQPGM40-42WpzWkyWa0/view?usp=sharing"
     )
 
     mkdir "${HOME}/.config/zellij"
