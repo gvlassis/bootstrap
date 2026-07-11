@@ -214,6 +214,9 @@ function install_programs(){
 
         printf "\x1b[3;35mInstalling Codex\x1b[0m\n"
         micromamba run -n base npm install -g @openai/codex@latest
+
+        printf "\x1b[3;35mInstalling Claude Code\x1b[0m\n"
+        curl -fL "https://claude.ai/install.sh" | bash        
     )
     rm -rf "${PWD}/tmp_bootstrap"
 }

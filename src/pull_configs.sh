@@ -70,4 +70,12 @@ function pull_configs(){
         # config.toml
         gdown "https://drive.google.com/file/d/1SgwTSvwhhptEAOQPGM40-42WpzWkyWa0/view?usp=sharing"
     )
+
+    mkdir "${HOME}/.claude"
+    (
+        cd "${HOME}/.claude"
+
+        # settings.json
+        gdown "https://drive.google.com/file/d/1YAD7h5sxReo5xaw5rKxJn5FemIYINeBp/view?usp=sharing"
+    )
 }

@@ -7,7 +7,4 @@ function pull_keys(){
     rclone sync ${name}:Keys "${HOME}/.ssh" --include "{id_rsa.pub,id_rsa,id_dsa.pub,id_dsa,id_ecdsa.pub,id_ecdsa,id_ed25519.pub,id_ed25519}"
     # SSH keys require specific permissions
     chmod 600 "${HOME}/.ssh/id_rsa" "${HOME}/.ssh/id_dsa" "${HOME}/.ssh/id_ecdsa" "${HOME}/.ssh/id_ed25519"
-
-    mkdir "${HOME}/.codex"
-    rclone sync ${name}:Keys "${HOME}/.codex" --include "auth.json"
 }
