@@ -21,7 +21,7 @@ function install_programs(){
         micromamba -y install -c conda-forge python=3.13 unzip make gawk nodejs
 
         printf "\x1b[3;35mInstalling gdown\x1b[0m\n"
-        micromamba run -n base pip3 install gdown
+        micromamba run -n base pip3 install -U --force-reinstall --no-cache-dir gdown
 
         printf "\x1b[3;35mInstalling atuin\x1b[0m\n"
         # Fixes Error: unexpected trailing characters
@@ -82,7 +82,7 @@ function install_programs(){
         )
 
         printf "\x1b[3;35mInstalling Python requests\x1b[0m\n"
-        micromamba run -n base pip3 install requests
+        micromamba run -n base pip3 install -U --force-reinstall --no-cache-dir requests
 
         printf "\x1b[3;35mInstalling zellij\x1b[0m\n"
         curl -LOJ "https://github.com/zellij-org/zellij/releases/latest/download/zellij-$zellij_id.tar.gz"
@@ -195,22 +195,22 @@ function install_programs(){
         git clone "https://github.com/gvlassis/termpdf.py"
         (
             cd termpdf.py
-            micromamba run -n base pip3 install PyMuPDF
+            micromamba run -n base pip3 install -U --force-reinstall --no-cache-dir PyMuPDF
             micromamba run -n base pip3 install -r requirements.txt
-            micromamba run -n base pip3 install .
+            micromamba run -n base pip3 install -U --force-reinstall --no-cache-dir .
         )
         
         printf "\x1b[3;35mInstalling ipython\x1b[0m\n"
-        micromamba run -n base pip3 install ipython
+        micromamba run -n base pip3 install -U --force-reinstall --no-cache-dir ipython
 
         printf "\x1b[3;35mInstalling kitcat\x1b[0m\n"
-        micromamba run -n base pip3 install kitcat
+        micromamba run -n base pip3 install -U --force-reinstall --no-cache-dir kitcat
 
         printf "\x1b[3;35mInstalling matrixplot\x1b[0m\n"
-        micromamba run -n base pip3 install matrixplot
+        micromamba run -n base pip3 install -U --force-reinstall --no-cache-dir matrixplot
 
         printf "\x1b[3;35mInstalling gvtop\x1b[0m\n"
-        micromamba run -n base pip3 install git+https://github.com/gvlassis/gvtop
+        micromamba run -n base pip3 install -U --force-reinstall --no-cache-dir git+https://github.com/gvlassis/gvtop
 
         printf "\x1b[3;35mInstalling Codex\x1b[0m\n"
         micromamba run -n base npm install -g @openai/codex@latest
